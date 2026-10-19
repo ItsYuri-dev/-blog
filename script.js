@@ -32,7 +32,7 @@ const copyMessage = document.getElementById("copyMessage");
 
 copyDiscord.addEventListener("click", async () => {
 
-    const username = "yurikkkkkk";
+    const username = "yurizin00096";
 
     try {
 
@@ -322,102 +322,3 @@ if (leftMatrix && rightMatrix) {
     matrixEffect(rightMatrix);
 
 }
-// ================================
-// PROTEÇÃO BÁSICA DO SITE
-// ================================
-
-// Bloquear botão direito
-document.addEventListener("contextmenu", function (event) {
-    event.preventDefault();
-});
-
-// Bloquear seleção de texto
-document.addEventListener("selectstart", function (event) {
-    event.preventDefault();
-});
-
-// Bloquear arrastar imagens
-document.addEventListener("dragstart", function (event) {
-    if (event.target.tagName === "IMG") {
-        event.preventDefault();
-    }
-});
-
-// Bloquear atalhos comuns do DevTools
-document.addEventListener("keydown", function (event) {
-
-    // F12
-    if (event.key === "F12") {
-        event.preventDefault();
-        return false;
-    }
-
-    // Ctrl + Shift + I
-    if (
-        event.ctrlKey &&
-        event.shiftKey &&
-        event.key.toLowerCase() === "i"
-    ) {
-        event.preventDefault();
-        return false;
-    }
-
-    // Ctrl + Shift + J
-    if (
-        event.ctrlKey &&
-        event.shiftKey &&
-        event.key.toLowerCase() === "j"
-    ) {
-        event.preventDefault();
-        return false;
-    }
-
-    // Ctrl + U
-    if (
-        event.ctrlKey &&
-        event.key.toLowerCase() === "u"
-    ) {
-        event.preventDefault();
-        return false;
-    }
-
-    // Ctrl + Shift + C
-    if (
-        event.ctrlKey &&
-        event.shiftKey &&
-        event.key.toLowerCase() === "c"
-    ) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-
-// ================================
-// DETECÇÃO SIMPLES DO DEVTOOLS
-// ================================
-
-(function () {
-
-    const threshold = 160;
-
-    setInterval(function () {
-
-        const widthDifference =
-            window.outerWidth - window.innerWidth;
-
-        const heightDifference =
-            window.outerHeight - window.innerHeight;
-
-        if (
-            widthDifference > threshold ||
-            heightDifference > threshold
-        ) {
-            document.body.classList.add("devtools-open");
-        } else {
-            document.body.classList.remove("devtools-open");
-        }
-
-    }, 1000);
-
-})();
